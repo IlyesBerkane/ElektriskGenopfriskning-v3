@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elektrisk Viden</title>
+    <link rel="stylesheet" href="style.css">
+    <style id="baggrund">
+        body {
+            background-image: url(Images/5.avif);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="Titel">
+        <h2>Genopfrisk din elektrisk viden!</h2>
+        <p>Genopfrisk din basale viden omkring de grundlæggende faktorer
+            i elektrisk fysik som spænding og resistance
+        </p>
+    </div>
+    
+    <h2 id="Side-overskrift">
+        General Elektrisk Spænding
+    </h2>
+
+    <p id="text-content"></p>
+
+    <div class="calculator">
+        <label for="inputResistance">Indtast modstand (ohm):</label>
+        <input type="text" id="inputResistance" placeholder="Indtast modstand">
+
+        <label for="inputVoltage">Indtast spænding (volt):</label>
+        <input type="text" id="inputVoltage" placeholder="Indtast spænding">
+
+        <button id="calculateButton">Beregn strøm</button>
+        <p id="result"></p>
+        <p id="error"></p>
+    </div>
+
+    <p id="testspg">Hvad er resistancen når I = 0.03 og V = 9</p>
+
+    <div class="test">
+        <label for="inputmodstand">Indtast modstand (ohm):</label>
+        <input type="text" id="input1" placeholder="indtast modstand">
+        <button id="calculateTest">Beregn modstand</button>
+        <p id="testResult"></p>
+    </div>  
+        
+    <script src="script.js"></script>
+</body>
+</html>
