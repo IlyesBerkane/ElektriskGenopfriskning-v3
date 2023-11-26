@@ -3,7 +3,7 @@
 målgruppe? Hvilken faglig problemstilling forsøger det at løse.
 
 
-- Vores hjemmeside er skabt med det formål at henvende sig til en bred målgruppe, der inkluderer både enkeltpersoner, der allerede har haft undervisning i generel fysisk elektrisk viden, samt dem, der ønsker at lære om grundlæggende elektrisk fysik. Vi fokuserer især på at oplyse brugerne om Ohms lov, der betragtes som en hjørnesten inden for elektroteknik. Målet er at tilbyde en interaktiv platform, hvor brugere kan genopfriske deres eksisterende viden eller erhverve nye kundskaber om det fundamentale koncept. Ved at integrere en kalkulator funktion og en test sektion giver hjemmesidens brugere mulighed for ikke kun at lære om Ohms lov, men også at praktisk anvende og evaluere deres forståelse af loven.
+- Vores hjemmeside er skabt med det formål at henvende sig til en bred målgruppe, der inkluderer både enkeltpersoner, der allerede har haft undervisning i generel fysisk elektrisk viden, samt dem, der ønsker at lære om grundlæggende elektrisk fysik. Vi fokuserer især på at oplyse brugerene om Ohms lov, der betragtes som en hjørnesten inden for elektroteknik. Målet er at tilbyde en interaktiv platform, hvor brugere kan genopfriske deres eksisterende viden eller erhverve nye kundskaber om det fundamentale koncept. Ved at integrere en kalkulator funktion og en test sektion giver hjemmesidens brugere mulighed for ikke kun at lære om Ohms lov, men også at praktisk anvende og evaluere deres forståelse af loven.
 
 
 2. Beskrivelse af den eller de designmønstre I benytter.
@@ -27,19 +27,35 @@ målgruppe? Hvilken faglig problemstilling forsøger det at løse.
 5. Et skema med test.
 
 
-- `var TestModule = (function () {
+// Module Pattern for Test Calculation
+var TestModule = (function () {
     var testResultElement = document.getElementById('testResult');
+    var testQuestionElement = document.getElementById('testspg');
+    var inputModstandElement = document.getElementById('input1');
+    var randomVoltage, randomCurrent;
+
+    function generateRandomValues() {
+        randomVoltage = Math.floor(Math.random() * 20) + 1; 
+        randomCurrent = (Math.random() * (0.9 - 0.01) + 0.01).toFixed(2);
+
+        testQuestionElement.textContent = 'Hvad er resistancen når I = ' + randomCurrent + ' og V = ' + randomVoltage;
+
+        inputModstandElement.value = '';
+    }
 
     function calculateTest() {
-        var inputModstand = parseFloat(document.getElementById('input1').value);
+        var inputModstand = parseFloat(inputModstandElement.value);
 
         testResultElement.innerText = '';
 
         if (isNaN(inputModstand)) {
-            testResultElement.innerText = 'Fejl: Indtast en gyldige værdi for modstand.';
+            testResultElement.innerText = 'Fejl: Indtast en gyldig værdi for modstand.';
         } else {
-            if (inputModstand == 300) {
-                testResultElement.innerText = 'Korrekt! 9 V/0.03 I = 300 ohm';
+            var calculatedResistance = (randomVoltage / randomCurrent).toFixed(2);
+
+            if (inputModstand.toFixed(2) === calculatedResistance) {
+                testResultElement.innerText = 'Korrekt! ' + randomVoltage + ' V/' + randomCurrent + ' I = ' + calculatedResistance + ' ohm';
+                generateRandomValues();
             } else {
                 testResultElement.innerText = 'Forkert, husk at bruge ohms lov fra overstående tekst!';
             }
@@ -47,9 +63,16 @@ målgruppe? Hvilken faglig problemstilling forsøger det at løse.
     }
 
     return {
-        calculateTest: calculateTest
+        calculateTest: calculateTest,
+        generateRandomValues: generateRandomValues
     };
-})();`
+})();
 
-Denne kalkulator, repræsenteret af `TestModule`, er designet til at evaluere brugerens forståelse af Ohms lov. Når brugeren indtaster en værdi for modstand (`inputModstand`), udfører kalkulatoren en sammenligning. Hvis den indtastede værdi er korrekt, dvs. 300 ohm i dette tilfælde, vises en succesbesked, der bekræfter brugerens korrekte anvendelse af Ohms lov med spænding (9V) og strøm (0.03A). Hvis brugeren indtaster en værdi, der ikke er et gyldigt numerisk værdi, vises der en fejlmeddelelse, og hvis den indtastede værdi ikke matcher det forventede resultat, vises en fejlbesked, der opfordrer brugeren til at henvise til Ohms lov for yderligere forståelse. Kalkulatoren tjener dermed som et værktøj til at teste og styrke brugerens viden om Ohms lov ved at give realtidsfeedback baseret på den indtastede modstand.
 
+TestModule.generateRandomValues();
+
+// Event listener
+document.getElementById('calculateTest').addEventListener('click', TestModule.calculateTest);
+
+
+koden her tester brugeren om de har forstået koceptet bag ohms lov ved at spørge om modtanden ud fra spændingen og amperen, hvis brugeren har svaret forkert, bliver de henvist til den forige tekst og bedes om at prøve igen, hvis brugeren svarrer korrekt, så bliver der stilt det samme spørgesmål, med forskellige værdier for spændingen og amperen, koden er designet sådan at den bliver ved for evigt med at give tilfældige værdier hver gang der bliver svaret korrekt
