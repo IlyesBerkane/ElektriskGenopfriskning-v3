@@ -11,6 +11,7 @@ body {
     background-color: rgb(48, 72, 102);
     color: rgb(255, 255, 255);
     text-align: center;
+    font-size: 20px;
 }
 
 #img1 {
@@ -19,14 +20,14 @@ body {
 }
 
 .calculator {
-    font-size: 25px;
+    font-size: 30px;
     text-align: center;
     margin-top: 20px;
     float: center;
 }
 
 .test {
-    font-size: 25px;
+    font-size: 30px;
     text-align: center;
     margin-top: 0px;
     float: center;
@@ -39,7 +40,7 @@ body {
 }
 
 #testspg {
-    font-size: 25px;
+    font-size: 30px;
     text-align: center;
 }
 
@@ -47,4 +48,3 @@ body {
     font-size: 40px;
     text-align: center;
 }
-
