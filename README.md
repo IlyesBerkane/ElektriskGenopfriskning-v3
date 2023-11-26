@@ -27,7 +27,7 @@ målgruppe? Hvilken faglig problemstilling forsøger det at løse.
 5. Et skema med test.
 
 
-- var TestModule = (function () {
+- `var TestModule = (function () {
     var testResultElement = document.getElementById('testResult');
 
     function calculateTest() {
@@ -49,7 +49,7 @@ målgruppe? Hvilken faglig problemstilling forsøger det at løse.
     return {
         calculateTest: calculateTest
     };
-})();
+})();`
 
 Denne kalkulator, repræsenteret af `TestModule`, er designet til at evaluere brugerens forståelse af Ohms lov. Når brugeren indtaster en værdi for modstand (`inputModstand`), udfører kalkulatoren en sammenligning. Hvis den indtastede værdi er korrekt, dvs. 300 ohm i dette tilfælde, vises en succesbesked, der bekræfter brugerens korrekte anvendelse af Ohms lov med spænding (9V) og strøm (0.03A). Hvis brugeren indtaster en værdi, der ikke er et gyldigt numerisk værdi, vises der en fejlmeddelelse, og hvis den indtastede værdi ikke matcher det forventede resultat, vises en fejlbesked, der opfordrer brugeren til at henvise til Ohms lov for yderligere forståelse. Kalkulatoren tjener dermed som et værktøj til at teste og styrke brugerens viden om Ohms lov ved at give realtidsfeedback baseret på den indtastede modstand.
 
