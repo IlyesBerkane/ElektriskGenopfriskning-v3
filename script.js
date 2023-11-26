@@ -1,3 +1,50 @@
+// Module Pattern for Test Calculation
+var TestModule = (function () {
+    var testResultElement = document.getElementById('testResult');
+    var testQuestionElement = document.getElementById('testspg');
+    var inputModstandElement = document.getElementById('input1');
+    var randomVoltage, randomCurrent;
+
+    function generateRandomValues() {
+        randomVoltage = Math.floor(Math.random() * 20) + 1; 
+        randomCurrent = (Math.random() * (0.9 - 0.01) + 0.01).toFixed(2);
+
+        testQuestionElement.textContent = 'Hvad er resistancen når I = ' + randomCurrent + ' og V = ' + randomVoltage;
+
+        inputModstandElement.value = '';
+    }
+
+    function calculateTest() {
+        var inputModstand = parseFloat(inputModstandElement.value);
+
+        testResultElement.innerText = '';
+
+        if (isNaN(inputModstand)) {
+            testResultElement.innerText = 'Fejl: Indtast en gyldig værdi for modstand.';
+        } else {
+            var calculatedResistance = (randomVoltage / randomCurrent).toFixed(2);
+
+            if (inputModstand.toFixed(2) === calculatedResistance) {
+                testResultElement.innerText = 'Korrekt! ' + randomVoltage + ' V/' + randomCurrent + ' I = ' + calculatedResistance + ' ohm';
+                generateRandomValues();
+            } else {
+                testResultElement.innerText = 'Forkert, husk at bruge ohms lov fra overstående tekst!';
+            }
+        }
+    }
+
+    return {
+        calculateTest: calculateTest,
+        generateRandomValues: generateRandomValues
+    };
+})();
+
+
+TestModule.generateRandomValues();
+
+// Event listener
+document.getElementById('calculateTest').addEventListener('click', TestModule.calculateTest);
+
 // Module Pattern for Calculation
 var CalculatorModule = (function () {
     var errorElement = document.getElementById('error');
@@ -57,33 +104,5 @@ fetch('tekster/Elektrisk spænding.txt')
         console.error('Text cannot be fetched', error);
     });
 
-// Module Pattern for Test Calculation
-var TestModule = (function () {
-    var testResultElement = document.getElementById('testResult');
-
-    function calculateTest() {
-        var inputModstand = parseFloat(document.getElementById('input1').value);
-
-        testResultElement.innerText = '';
-
-        if (isNaN(inputModstand)) {
-            testResultElement.innerText = 'Fejl: Indtast en gyldige værdi for modstand.';
-        } else {
-            if (inputModstand == 300) {
-                testResultElement.innerText = 'Korrekt! 9 V/0.03 I = 300 ohm';
-            } else {
-                testResultElement.innerText = 'Forkert, husk at bruge ohms lov fra overstående tekst!';
-            }
-        }
-    }
-
-    return {
-        calculateTest: calculateTest
-    };
-})();
-
 // Event listener
 document.getElementById('calculateButton').addEventListener('click', CalculatorModule.calculateCurrent);
-
-// Event listener
-document.getElementById('calculateTest').addEventListener('click', TestModule.calculateTest);
