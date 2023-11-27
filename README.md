@@ -26,7 +26,7 @@ målgruppe? Hvilken faglig problemstilling forsøger det at løse.
 
 5. Et skema med test.
 
-
+```javascript
 // Module Pattern for Test Calculation
 var TestModule = (function () {
     var testResultElement = document.getElementById('testResult');
@@ -73,6 +73,6 @@ TestModule.generateRandomValues();
 
 // Event listener
 document.getElementById('calculateTest').addEventListener('click', TestModule.calculateTest);
-
+```
 
 koden her tester brugeren om de har forstået koceptet bag ohms lov ved at spørge om modtanden ud fra spændingen og amperen, hvis brugeren har svaret forkert, bliver de henvist til den forige tekst og bedes om at prøve igen, hvis brugeren svarrer korrekt, så bliver der stilt det samme spørgesmål, med forskellige værdier for spændingen og amperen, koden er designet sådan at den bliver ved for evigt med at give tilfældige værdier hver gang der bliver svaret korrekt
