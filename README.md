@@ -11,7 +11,6 @@ målgruppe? Hvilken faglig problemstilling forsøger det at løse.
 
 - Designmønstret "Module Pattern" er brrugt til at organisere JavaScript-koden ved at opdele alle de funktioner som vi gerne ville bruge i separate moduler. Hvert modul indeholder private variabler og funktioner, hvilket minimerer risikoen for konflikter med andre funktioner og deres del af koden. Dette har gjort det nemmere at vedligeholde og udvide koden, da hver del af funktionaliteten er indkapslet i sit eget selvstændige modul. Samtidig reduceres risikoen for uforventede globale variabelkonflikter, hvilket gør koden mere robust og lettere at forstå og bygge videre på.
 
-![image](https://github.com/IlyesBerkane/ElektriskGenopfriskning-v3/assets/99912850/445b3f68-bdd1-40af-944f-a76ff92c9801)
 
 På billedet kan vi se Main Branch som er main sript.js fil, hvor de brancher til alle modulerne som 'TestModule', 'CalculatorModule' og 'ElektriskVidenModule', hvor de også brancher ud til forskellige funktioner og private variabler, og så har de også globale variabler som kan blive brugt gennem forksellige module
 
@@ -77,5 +76,8 @@ TestModule.generateRandomValues();
 // Event listener
 document.getElementById('calculateTest').addEventListener('click', TestModule.calculateTest);
 ```
+
+![image](https://github.com/IlyesBerkane/ElektriskGenopfriskning-v3/assets/99912850/7f392d0a-5d1e-4790-9539-d0ad654d10e4)
+
 
 Vi benytter en formel der hedder: V = I * R, derefter har vi anvendt funktionen "generateRandomValues" og givet den variablene "randomVoltage" og "randomCurrent". "RandomVoltage"-funktionen har fået tildelt talværdier i intervallet [0;20]. Det samme princip gør sig gældende for "RandomCurrent"-funktionen og den har tal fra intervallet [0,9;0,001] .Vores input er de tal, som bliver indtastet og derefter bliver de kørt igennem lommeregner-funktionen og derefter får man det forventede output som skal være det rigtige svar. Er svaret dog forkert, så vil det samme spørgsmål blive der, indtil der bliver svaret rigtigt.
