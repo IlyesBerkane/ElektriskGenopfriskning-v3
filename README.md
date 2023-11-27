@@ -3,13 +3,13 @@
 målgruppe? Hvilken faglig problemstilling forsøger det at løse.
 
 
-- Vores hjemmeside er skabt med det formål at henvende sig til en bred målgruppe, der inkluderer både enkeltpersoner, der allerede har haft undervisning i generel fysisk elektrisk viden, samt dem, der ønsker at lære om grundlæggende elektrisk fysik. Vi fokuserer især på at oplyse brugerene om Ohms lov, der betragtes som en hjørnesten inden for elektroteknik. Målet er at tilbyde en interaktiv platform, hvor brugere kan genopfriske deres eksisterende viden eller erhverve nye kundskaber om det fundamentale koncept. Ved at integrere en kalkulator funktion og en test sektion giver hjemmesidens brugere mulighed for ikke kun at lære om Ohms lov, men også at praktisk anvende og evaluere deres forståelse af loven.
+- Vores hjemmeside er skabt med det formål at henvende sig til en bred målgruppe, der inkluderer både enkeltpersoner, der allerede har haft undervisning i generel fysisk elektrisk viden, samt dem, der ønsker at lære om grundlæggende elektrisk fysik. Vi fokuserer især på at oplyse brugerene om Ohms lov, der betragtes som en hjørnesten inden for elektroteknik. Målet er at tilbyde en interaktiv platform, hvor brugere kan genopfriske deres eksisterende viden eller erhverve nye kundskaber om det fundamentale koncept. Ved at integrere en lommeregner funktion og en test sektion giver hjemmesidens brugere mulighed for ikke kun at lære om Ohms lov, men også at praktisk anvende og evaluere deres forståelse af loven.
 
 
 2. Beskrivelse af den eller de designmønstre I benytter.
 
 
-- Designmønstret "Module Pattern" er brrugt til at organisere JavaScript-koden ved at opdele alle de funktioner som vi gerne ville bruge i separate moduler. Hvert modul indeholder private variabler og funktioner, hvilket minimerer risikoen for konflikter med andre funktioner og deres del af koden. Dette har gjort det nemmere at vedligeholde og udvide koden, da hver del af funktionaliteten er indkapslet i sit eget selvstændige modul. Samtidig reduceres risikoen for uforvenntede globale variabelkonflikter, hvilket gør koden mere robust og lettere at forstå og bygge vidre på.
+- Designmønstret "Module Pattern" er brrugt til at organisere JavaScript-koden ved at opdele alle de funktioner som vi gerne ville bruge i separate moduler. Hvert modul indeholder private variabler og funktioner, hvilket minimerer risikoen for konflikter med andre funktioner og deres del af koden. Dette har gjort det nemmere at vedligeholde og udvide koden, da hver del af funktionaliteten er indkapslet i sit eget selvstændige modul. Samtidig reduceres risikoen for uforventede globale variabelkonflikter, hvilket gør koden mere robust og lettere at forstå og bygge videre på.
 
 
 3. Beskrivelse af udviklingsprocessen.
