@@ -11,6 +11,9 @@ målgruppe? Hvilken faglig problemstilling forsøger det at løse.
 
 - Designmønstret "Module Pattern" er brrugt til at organisere JavaScript-koden ved at opdele alle de funktioner som vi gerne ville bruge i separate moduler. Hvert modul indeholder private variabler og funktioner, hvilket minimerer risikoen for konflikter med andre funktioner og deres del af koden. Dette har gjort det nemmere at vedligeholde og udvide koden, da hver del af funktionaliteten er indkapslet i sit eget selvstændige modul. Samtidig reduceres risikoen for uforventede globale variabelkonflikter, hvilket gør koden mere robust og lettere at forstå og bygge videre på.
 
+![image](https://github.com/IlyesBerkane/ElektriskGenopfriskning-v3/assets/99912850/445b3f68-bdd1-40af-944f-a76ff92c9801)
+
+På billedet kan vi se Main Branch som er main sript.js fil, hvor de brancher til alle modulerne som 'TestModule', 'CalculatorModule' og 'ElektriskVidenModule', hvor de også brancher ud til forskellige funktioner og private variabler, og så har de også globale variabler som kan blive brugt gennem forksellige module
 
 3. Beskrivelse af udviklingsprocessen.
 
