@@ -77,7 +77,7 @@ TestModule.generateRandomValues();
 document.getElementById('calculateTest').addEventListener('click', TestModule.calculateTest);
 ```
 
-![image](https://github.com/IlyesBerkane/ElektriskGenopfriskning-v3/assets/99912850/7f392d0a-5d1e-4790-9539-d0ad654d10e4)
+![image](https://github.com/IlyesBerkane/ElektriskGenopfriskning-v3/assets/99912850/2e7549f7-52c5-4059-87d6-178df6330f30)
 
 
 Vi benytter en formel der hedder: V = I * R, derefter har vi anvendt funktionen "generateRandomValues" og givet den variablene "randomVoltage" og "randomCurrent". "RandomVoltage"-funktionen har fået tildelt talværdier i intervallet [0;20]. Det samme princip gør sig gældende for "RandomCurrent"-funktionen og den har tal fra intervallet [0,9;0,001] .Vores input er de tal, som bliver indtastet og derefter bliver de kørt igennem lommeregner-funktionen og derefter får man det forventede output som skal være det rigtige svar. Er svaret dog forkert, så vil det samme spørgsmål blive der, indtil der bliver svaret rigtigt.
